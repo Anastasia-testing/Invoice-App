@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Add New</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+</head>
+
+<body>
+
+    <nav class="top-nav">
+        <div class="nav-wrapper">
+            <a class="brand-logo center" id="logo-name" href="/members">Bobby's Beats</a>
+            <div class="right" style="margin-right: 10px">
+                <a href="/index" class="btn waves-effect waves-light light-blue darken-4">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <a href="#" data-target="nav-mobile" class="top-nav sidenav-trigger full hide-on-large-only"><i
+                class="material-icons">menu</i></a>
+    </div>
+
+    <ul id="nav-mobile" class="sidenav sidenav-fixed" styler="transform: translate(0px);">
+        <li class="logo">
+            <div id="logo-container" class="brand-logo"></div>
+            <img id="navbar-logo" type="image" src="./assets/b3Blue.png"
+                style="width: 130px; height: 130px; margin-left: 85px; margin-top: 10px"></img>
+        </li>
+
+        <li>
+            <h6 style="text-align: center;"><a id="logo-name" href="/members">Business Blueprint</a></h6>
+        </li>
+
+        <li>
+            <div class="divider"></div>
+        </li>
+
+        <div>
+            <h6 style="padding: 10px; color: gray">Customers</h6>
+        </div>
+
+        <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+                <li class="bold">
+                    <a class="collapsible-header waves-effect waves-light waves-sidenav" tabindex="0"
+                        href="/search">Search</a>
+                </li>
+
+                <li class="bold">
+                    <a class="collapsible-header waves-effect waves-light waves-sidenav" tabindex="0" href="/addNew">Add
+                        New</a>
+                </li>
+
+                <li class="bold">
+                    <a class="collapsible-header waves-effect waves-light waves-sidenav" tabindex="0">Invoicing</a>
+                    <div class="collapsible-body">
+                        <ul>
+                            <li>
+                                <a href="/createsalesorder">Create New Sales Order</a>
+                            </li>
+                            <li>
+                                <a href="/searchsalesorder">Search Sales Order</a>
+                            </li>
+                            <li>
+                                <a href="/createinvoice">Generate New Invoice</a>
+                            </li>
+                            <li>
+                                <a href="/searchinvoice">Search for an Invoice</a>
+                            </li>
+                            <li>
+                                <a href="/statinvoice">View Invoice Statistics</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <div class="divider"></div>
+        </li>
+
+        <li>
+            <h6 style="padding: 10px; color: gray">Employees</h6>
+        </li>
+
+        <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+                <li class="bold">
+                    <a class="collapsible-header waves-effect waves-light waves-sidenav" tabindex="0" href="#!">See
+                        Employee Information</a>
+                </li>
+
+                <li class="bold">
+                    <a class="collapsible-header waves-effect waves-light waves-sidenav" tabindex="0" href="#!">Search
+                        by Manager</a>
+                </li>
+
+                <li class="bold">
+                    <a class="collapsible-header waves-effect waves-light waves-sidenav" tabindex="0" href="#!">Add New
+                        Employee or Manager</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <div class="mainWrapper container right">
+
+        <h3 class="subpageH1 center-align">ADD NEW</h3>
+
+
+        <div class="row">
+            <div class="col s1 l2"></div>
+            <div class="addPage col s10 l9">
+                <ul class="collapsible center">
+                    <li>
+                        <div class="collapsible-header addNewCH">
+                            <a class="CHText"><i class="material-icons">work</i>Add Customer</a>
+                        </div>
+                        <div class="collapsible-body addNewCB">
+                            <div id="addCustomer">
+                                <div class="row">
+                                    <form class="col s12" id="client-form">
+                                        <div class="row">
+                                            <div class="input-field col s6">
+                                                <input id="CuFirstName" type="text" class="validate">
+                                                <label for="CuFirstName">First Name</label>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                <input id="CuLastName" type="text" class="validate">
+                                                <label for="CuLastName">Last Name</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field col s6">
+                                                <input id="CuEmail" type="email" class="validate">
+                                                <label for="CuEmail">Email</label>
+                                                <span class="helper-text"
+                                                    data-error="Please enter a valid email"></span>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                <input id="CuPhone" type="tel" class="validate"
+                                                    pattern="^\d{3}-\d{3}-\d{4}$" required>
+                                                <label for="CuPhone">Phone Number (i.e. xxx-xxx-xxxx)</label>
+                                                <span class="helper-text"
+                                                    data-error="Please enter a valid phone number in correct format"></span>
+                                            </div>
+                                        </div>
+                                        <button id="customerSubmit" class="btn waves-effect waves-light" type="submit"
+                                            name="action">Submit
+                                            <i class="material-icons right">send</i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="collapsible-header addNewCH">
+                            <a class="CHText"><i class="material-icons">add_circle</i>Add Item</a>
+                        </div>
+                        <div class="collapsible-body addNewCB">
+                            <div id="addItem">
+                                <div class="row">
+                                    <form class="col s12" id="item-form">
+                                        <div class="row">
+                                            <div class="input-field col s6">
+                                                <input id="itemName" type="text" class="validate">
+                                                <label for="itemName">Item Name</label>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                <input id="itemPrice" type="text" class="validate">
+                                                <label for="itemPrice">Item Price</label>
+                                            </div>
+                                        </div>
+                                        <button id="itemSubmit" class="btn waves-effect waves-light" type="submit"
+                                            name="action">Submit
+                                            <i class="material-icons right">send</i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="collapsible-header addNewCH">
+                            <a class="CHText"><i class="material-icons">create_new_folder</i>Add Order</a>
+                        </div>
+                        <div class="collapsible-body addNewCB">
+                            <div id="addEmployee">
+                                <div class="row">
+                                    <form class="col s12">
+                                        <div class="row">
+                                            <div class="input-field col s6">
+                                                <input id="CuFirst" type="text" class="validate">
+                                                <label for="CuFirst">First Name</label>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                <input id="CuLast" type="text" class="validate">
+                                                <label for="CuLast">Last Name</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <select multiple>
+                                                    <option value="" disabled selected>Choose Item to Add to Order
+                                                    </option>
+                                                    <option value="1">Option 1</option>
+                                                    <option value="2">Option 2</option>
+                                                    <option value="3">Option 3</option>
+                                                </select>
+                                                <label>Add Items:</label>
+                                            </div>
+                                        </div>
+                                        <button id="employeeSubmit" class="btn waves-effect waves-light" type="submit"
+                                            name="action">Submit
+                                            <i class="material-icons right">send</i>
+                                        </button>
+                                    </form>
+                                </div>
+                                <br>
+                                <span>Can we make this with drop downs of customers and items?</span>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="collapsible-header addNewCH">
+                            <a class="CHText"><i class="material-icons">person_add</i>Add Employee</a>
+                        </div>
+                        <div class="collapsible-body addNewCB">
+                            <div id="addEmployee">
+                                <div class="row">
+                                    <form class="col s12">
+                                        <div class="row">
+                                            <div class="input-field col s6">
+                                                <input id="EmFirstName" type="text" class="validate">
+                                                <label for="EmFirstName">First Name</label>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                <input id="EmLastName" type="text" class="validate">
+                                                <label for="EmLastName">Last Name</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <select>
+                                                    <option value="" disabled selected>Choose Manager</option>
+                                                    <option value="1">Option 1</option>
+                                                    <option value="2">Option 2</option>
+                                                    <option value="3">Option 3</option>
+                                                </select>
+                                                <label>Manager Name</label>
+                                            </div>
+                                        </div>
+                                        <button id="employeeSubmit" class="btn waves-effect waves-light" type="submit"
+                                            name="action">Submit
+                                            <i class="material-icons right">send</i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="col s1 l2"></div>
+        </div>
+
+
+
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/members.js"></script>
+    <script src="./js/addNewScript.js"></script>
+
+</body>
+
+</html>
